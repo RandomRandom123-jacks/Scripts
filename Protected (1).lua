@@ -187,7 +187,7 @@ local debounce = false
 section2:AddButton({
     Name = "Ka + Auto collcet chest",
     Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/masjafxW"))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/C2zWp5Lf"))()
     end
 })
 
