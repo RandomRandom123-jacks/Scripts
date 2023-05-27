@@ -141,7 +141,7 @@ local function SkillBind(bind)
 end
 
 section1:AddToggle({
-    Name = "auto mugen keybind",
+    Name = "Auto Clash",
     Value = false,
     Flag = "GO",
     Callback = function(state)
@@ -188,7 +188,7 @@ section4:AddButton({
 })
 
 section4:AddButton({
-    Name = "Dmg buff - All race",
+    Name = "Dmg buff - All race press once",
     Callback = function()
         _G.a = true
 
