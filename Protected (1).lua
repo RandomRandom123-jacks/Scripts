@@ -193,7 +193,7 @@ section1:AddToggle({
         while k do 
             local target = getclosestmob() 
             if target and target:FindFirstChild("HumanoidRootPart")and (target.Name:match("Akaza") or target.Name:match("Flesh") or target.Name:match("Enmu")) then 
-                HumanoidRootPart.CFrame = CFrame.new(target.HumanoidRootPart.Position + target.HumanoidRootPart.CFrame.LookVector * -7.5, target.HumanoidRootPart.Position)
+                HumanoidRootPart.CFrame = CFrame.new(target.HumanoidRootPart.Position + target.HumanoidRootPart.CFrame.LookVector * 7, target.HumanoidRootPart.Position)
             end 
             task.wait()
         end 
@@ -215,7 +215,7 @@ section4:AddButton({
 })
 
 section4:AddButton({
-    Name = "Dmg buff - All race"
+    Name = "Dmg buff - All race",
     Callback = function()
         _G.a = true
 
