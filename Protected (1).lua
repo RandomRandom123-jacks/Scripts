@@ -140,7 +140,22 @@ local function SkillBind(bind)
     end)
 end
 
-
+section1:AddToggle({
+    Name = "auto mugen keybind",
+    Value = false,
+    Flag = "GO",
+    Callback = function(state)
+        nv = state
+        while nv do
+            SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
+            SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
+            SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
+            SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
+            SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
+            wait()
+        end
+    end
+})
 
 section1:AddToggle({
     Name = "Auto Bosses", 
@@ -166,12 +181,23 @@ section4:AddButton({
 })
 
 section4:AddButton({
-    Name = "Rengoku Mode - Rengoku Only", 
+    Name = "Rengoku Mode - Human Only", 
     Callback = function()
     game:GetService("ReplicatedStorage").Remotes.heart_ablaze_mode_remote:FireServer(true)
     end 
 })
 
+section4:AddButton({
+    Name = "Dmg buff - All race",
+    Callback = function()
+        _G.a = true
+
+        while _G.a do
+        wait(2)
+        game:GetService("ReplicatedStorage").Remotes.war_Drums_remote:FireServer(true)
+        end
+    end
+})
 
 local debounce = false 
 section2:AddButton({
