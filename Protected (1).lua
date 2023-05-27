@@ -140,23 +140,6 @@ local function SkillBind(bind)
     end)
 end
 
-section1:AddToggle({
-    Name = "Auto Mugen Keybind", 
-    Value = false, 
-    Flag = "AK", 
-    Callback = function(state)
-        rk = state 
-        while rk do 
-            SkillBind("G")
-            SkillBind("H")
-            SkillBind("J")
-            SkillBind("K")
-            SkillBind("L")
-            task.wait()
-        end 
-    end 
-})
-
 
 
 section1:AddToggle({
@@ -168,7 +151,7 @@ section1:AddToggle({
         while k do 
             local target = getclosestmob() 
             if target and target:FindFirstChild("HumanoidRootPart")and (target.Name:match("Akaza") or target.Name:match("Flesh") or target.Name:match("Enmu")) then 
-                HumanoidRootPart.CFrame = CFrame.new(target.HumanoidRootPart.Position + target.HumanoidRootPart.CFrame.LookVector * 7, target.HumanoidRootPart.Position)
+                HumanoidRootPart.CFrame = CFrame.new(target.HumanoidRootPart.Position + target.HumanoidRootPart.CFrame.LookVector * -7.5, target.HumanoidRootPart.Position)
             end 
             task.wait()
         end 
@@ -182,12 +165,19 @@ section4:AddButton({
     end 
 })
 
+section4:AddButton({
+    Name = "Rengoku Mode - Rengoku Only", 
+    Callback = function()
+    game:GetService("ReplicatedStorage").Remotes.heart_ablaze_mode_remote:FireServer(true)
+    end 
+})
+
 
 local debounce = false 
 section2:AddButton({
-    Name = "Ka + Auto collcet chest",
+    Name = "Kill Aura Gui",
     Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/C2zWp5Lf"))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/0nt45L22"))()
     end
 })
 
