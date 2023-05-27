@@ -141,7 +141,7 @@ local function SkillBind(bind)
 end
 
 section1:AddToggle({
-    Name = "auto mugen keybind",
+    Name = "Auto CLash",
     Value = false,
     Flag = "GO",
     Callback = function(state)
@@ -188,7 +188,7 @@ section4:AddButton({
 })
 
 section4:AddButton({
-    Name = "Dmg buff - All race"
+    Name = "Dmg buff - All race",
     Callback = function()
         _G.a = true
 
@@ -200,7 +200,7 @@ section4:AddButton({
 })
 
 local debounce = false 
-section2:AddToggle({
+section2:AddButton({
     Name = "Kill Aura Gui",
     Callback = function()
         loadstring(game:HttpGet("https://pastebin.com/raw/0nt45L22"))()
