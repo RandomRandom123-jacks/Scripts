@@ -81,33 +81,6 @@ local lib = loadstring(game:GetObjects("rbxassetid://7657867786")[1].Source)()
 local subs = lib.subs 
 local libclose = subs.Wait
 
-getgenv().mm = ""
-local function attack(method)
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-end
-
-local attackMethods = {
-    ["Combat"] = 'fist_combat',
-    ["Sword"] = 'Sword_Combat_Slash',
-    ["Scythe"] = 'Scythe_Combat_Slash',
-    ["Claw"] = 'claw_Combat_Slash'
-}
-
 local window = lib:CreateWindow({
     Name = "Zyrc Hub",
     Themeable = {
@@ -168,7 +141,7 @@ local function SkillBind(bind)
 end
 
 section1:AddToggle({
-    Name = "Auto Clash",
+    Name = "auto mugen keybind",
     Value = false,
     Flag = "GO",
     Callback = function(state)
@@ -215,7 +188,7 @@ section4:AddButton({
 })
 
 section4:AddButton({
-    Name = "Dmg buff - All race",
+    Name = "Dmg buff - All race"
     Callback = function()
         _G.a = true
 
@@ -227,28 +200,11 @@ section4:AddButton({
 })
 
 local debounce = false 
-
 section2:AddToggle({
-    Name = "Kill Aura ", 
-    Value = false, 
-    Flag = "GM", 
-    Callback = function(state)
-        rc = state
-        while rc do
-            attack(attackMethods[mm])
-            task.wait(2)
-        end
+    Name = "Kill Aura Gui",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/0nt45L22"))()
     end
-})
-
-section2:AddDropdown({
-    Name = "Select Weapon", 
-    Nothing = "SELECT WEAPON..", 
-    List = {"Combat", "Scythe", "Claw", "Sword"}, 
-    Flag = "SW", 
-    Callback = function(selected)
-        mm = selected 
-    end 
 })
 
 for i,v in pairs(getconnections(Player.Idled)) do 
