@@ -187,11 +187,13 @@ section1:AddToggle({
         nv = state
         while nv do
             if game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder:FindFirstChild("Front") then
-                SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
-                SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
-                SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
-                SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
-                SkillBind(tostring(game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder.Front.Text))
+                local args = {
+                    [1] = "Change_Value",
+                    [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(game.Players.LocalPlayer) .. "vsEnmu"):WaitForChild(tostring(game.Players.LocalPlayer)),
+                    [3] = 100
+                    }
+            
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait()
                 else
     
@@ -217,22 +219,6 @@ section1:AddToggle({
     end 
 })
 
-
-section4:AddButton({
-    Name = "Insta Clash",
-    Callback = function()
-
-        local args = {
-        [1] = "Change_Value",
-        [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(game.Players.LocalPlayer) .. "vsEnmu"):WaitForChild(tostring(game.Players.LocalPlayer)),
-        [3] = 100
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-    end
-
-
-})
 section4:AddButton({
     Name = "God Mode - Kamado Only", 
     Callback = function()
