@@ -6,6 +6,15 @@ repeat wait() until game:IsLoaded()
 
 local VIM = game:GetService("VirtualInputManager")
 
+local function SkillBind(bind)
+    pcall(function()
+        VIM:SendKeyEvent(true,bind,false,game)
+        task.wait()
+        VIM:SendKeyEvent(false,bind,false,game)
+        wait(.2)
+    end)
+end
+
 game.ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("getclientping").OnClientInvoke = function(Novaz5792) 
     task.wait(5)
     return true 
@@ -115,8 +124,22 @@ local section4 = main1:CreateSection({
 
 local savedtick = tick()
 local curtarget = nil 
+
+
 section1:AddToggle({
-    Name = "Gka mist 3rd move needed", 
+    Name = "BYPASS KA (read discord)",
+    Value = false,
+    Flag = "FJ",
+    Callback = function(state)
+        x = state
+        while x do
+            SkillBind("X")
+        end
+    end
+
+})
+section1:AddToggle({
+    Name = "Gka mist 2nd move needed", 
     Value = false, 
     Flag = "AF", 
     Callback = function(state)
@@ -154,14 +177,6 @@ section1:AddToggle({
     end 
 })
 
-local function SkillBind(bind)
-    pcall(function()
-        VIM:SendKeyEvent(true,bind,false,game)
-        task.wait()
-        VIM:SendKeyEvent(false,bind,false,game)
-        wait(.2)
-    end)
-end
 
 section1:AddToggle({
     Name = "Auto CLash",
