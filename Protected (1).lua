@@ -178,6 +178,7 @@ section1:AddToggle({
 })
 
 
+
 section1:AddToggle({
     Name = "Auto CLash",
     Value = false,
@@ -216,12 +217,29 @@ section1:AddToggle({
     end 
 })
 
+
+section4:AddButton({
+    Name = "Insta Clash",
+    Callback = function()
+
+        local args = {
+        [1] = "Change_Value",
+        [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(game.Players.LocalPlayer) .. "vsEnmu"):WaitForChild(tostring(game.Players.LocalPlayer)),
+        [3] = 100
+        }
+
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+    end
+
+
+})
 section4:AddButton({
     Name = "God Mode - Kamado Only", 
     Callback = function()
     game:GetService("ReplicatedStorage").Remotes.heal_tang123asd:FireServer(true)
     end 
 })
+
 
 section4:AddButton({
     Name = "Rengoku Mode - Human Only", 
