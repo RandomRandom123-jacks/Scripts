@@ -116,7 +116,7 @@ local section4 = main1:CreateSection({
 local savedtick = tick()
 local curtarget = nil 
 section1:AddToggle({
-    Name = "Auto ALL NPC ICE BDA OP", 
+    Name = "Gka mist 3rd move needed", 
     Value = false, 
     Flag = "AF", 
     Callback = function(state)
@@ -125,12 +125,13 @@ section1:AddToggle({
             local target = getclosestmob() 
             if target then
                 local args = {
-                    [1] = "ice_demon_art_barren_hanging_garden_damage2",
+                    [1] = "eight_layed_mist_damage",
                     [2] = workspace:WaitForChild(tostring(game.Players.LocalPlayer)),
-                    [3] = target.HumanoidRootPart.CFrame
-                    }
-                        
-                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+                    [3] = target.HumanoidRootPart.CFrame,
+                    [4] = true
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
             end
             task.wait()
         end 
