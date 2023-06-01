@@ -2,9 +2,6 @@
 
 loadstring(game:HttpGet("https://pastebin.com/raw/15bT0XYm"))()
 
-local plrservice = game:GetService("Players") 
-local plr = plrservice:GetChildren()
-
 repeat wait() until game:IsLoaded() 
 
 local VIM = game:GetService("VirtualInputManager")
@@ -167,7 +164,7 @@ section1:AddToggle({
         x = state
         while x do
             SkillBind("X")
-        end 
+        end
     end
 
 })
@@ -181,13 +178,13 @@ section1:AddToggle({
             local target = getclosestmob() 
             if target then
                 local args = {
-                    [1] = "mist_air_woosh_damage",
+                    [1] = "eight_layed_mist_damage",
                     [2] = workspace:WaitForChild(tostring(game.Players.LocalPlayer)),
-                    [3] = Target.HumanoidRootPart.CFrame
+                    [3] = target.HumanoidRootPart.CFrame,
+                    [4] = true
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                
             end
             task.wait()
         end 
@@ -213,12 +210,12 @@ section1:AddToggle({
 
 
 section1:AddToggle({
-    Name = "Auto Clash",
+    Name = "Auto CLash",
     Value = false,
     Flag = "GO",
     Callback = function(state)
-        kk = state
-        while kk do
+        nv = state
+        while nv do
             if game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder:FindFirstChild("Front") then
                 local args = {
                     [1] = "Change_Value",
@@ -236,9 +233,6 @@ section1:AddToggle({
     end
 })
 
-
-
-
 section1:AddToggle({
     Name = "Auto Bosses", 
     Value = false, 
@@ -255,50 +249,6 @@ section1:AddToggle({
     end 
 })
 
-section4:AddButton({
-    Name = "Global insta clash",
-    Callback = function()
-        local args = {
-            [1] = "Change_Value",
-            [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[1]) .. "vsEnmu"):WaitForChild(tostring(plr[1])),
-            [3] = 100
-            }
-    
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-
-            local args = {
-                [1] = "Change_Value",
-                [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[2]) .. "vsEnmu"):WaitForChild(tostring(plr[2])),
-                [3] = 100
-                }
-        
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-            
-                local args = {
-                    [1] = "Change_Value",
-                    [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[3]) .. "vsEnmu"):WaitForChild(tostring(plr[3])),
-                    [3] = 100
-                    }
-            
-                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                    local args = {
-                        [1] = "Change_Value",
-                        [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[4]) .. "vsEnmu"):WaitForChild(tostring(plr[4])),
-                        [3] = 100
-                        }
-                
-                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                        local args = {
-                            [1] = "Change_Value",
-                            [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[5]) .. "vsEnmu"):WaitForChild(tostring(plr[5])),
-                            [3] = 100
-                            }
-                    
-                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                            wait()
-    end
-
-})
 section4:AddButton({
     Name = "God Mode - Kamado Only", 
     Callback = function()
