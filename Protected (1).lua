@@ -117,6 +117,9 @@ local section2 = main1:CreateSection({
     Side = "Right"
 })
 
+local section5 = main1:CreateSection({
+    Name = "Inf Stuff"
+})
 local section4 = main1:CreateSection({
     Name = "Misc",
     Side = "Right"
@@ -125,6 +128,33 @@ local section4 = main1:CreateSection({
 local savedtick = tick()
 local curtarget = nil 
 
+
+
+section5:AddToggle({
+    Name = "Inf Breathing",
+    Value = false,
+    Flag = "MN",
+    Callback = function(state)
+        n = state 
+        while n do
+            getrenv()._G.AddBreath("gpthebest", 50)
+            wait()
+        end
+    end
+})
+
+section5:AddToggle({
+    Name = "Inf Stamina",
+    Value = false,
+    Flag = "MR",
+    Callback = function(state)
+        d = state
+        while d do 
+            getrenv()._G.AddStamina("gpthebest", 50)
+            wait()
+        end
+    end
+})
 
 section1:AddToggle({
     Name = "BYPASS KA (read discord)",
