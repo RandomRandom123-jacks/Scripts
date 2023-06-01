@@ -167,7 +167,7 @@ section1:AddToggle({
         x = state
         while x do
             SkillBind("X")
-        end
+        end 
     end
 
 })
@@ -213,7 +213,7 @@ section1:AddToggle({
 
 
 section1:AddToggle({
-    Name = "Auto CLash",
+    Name = "Auto Clash",
     Value = false,
     Flag = "GO",
     Callback = function(state)
@@ -236,59 +236,7 @@ section1:AddToggle({
     end
 })
 
-section1:AddToggle({
-    Name = "Auto Global Clash",
-    Value = false,
-    Flag = "CR",
-    Callback = function(state)
-        nv = state
-        while nv do
-            if game.Players.LocalPlayer.PlayerGui.universal_client_scripts.Clashing2.Clash_Ui2.Holder:FindFirstChild("Front") then
-                local args = {
-                    [1] = "Change_Value",
-                    [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[1]) .. "vsEnmu"):WaitForChild(tostring(plr[1])),
-                    [3] = 100
-                    }
-            
-                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
 
-                    local args = {
-                        [1] = "Change_Value",
-                        [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[2]) .. "vsEnmu"):WaitForChild(tostring(plr[2])),
-                        [3] = 100
-                        }
-                
-                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                    
-                        local args = {
-                            [1] = "Change_Value",
-                            [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[3]) .. "vsEnmu"):WaitForChild(tostring(plr[3])),
-                            [3] = 100
-                            }
-                    
-                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                            local args = {
-                                [1] = "Change_Value",
-                                [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[4]) .. "vsEnmu"):WaitForChild(tostring(plr[4])),
-                                [3] = 100
-                                }
-                        
-                                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                                local args = {
-                                    [1] = "Change_Value",
-                                    [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[5]) .. "vsEnmu"):WaitForChild(tostring(plr[5])),
-                                    [3] = 100
-                                    }
-                            
-                                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-                wait()
-                else
-    
-                end
-                wait()
-        end
-    end
-})
 
 
 section1:AddToggle({
@@ -307,6 +255,50 @@ section1:AddToggle({
     end 
 })
 
+section4:AddButton({
+    Name = "Global insta clash",
+    Callback = function()
+        local args = {
+            [1] = "Change_Value",
+            [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[1]) .. "vsEnmu"):WaitForChild(tostring(plr[1])),
+            [3] = 100
+            }
+    
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "Change_Value",
+                [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[2]) .. "vsEnmu"):WaitForChild(tostring(plr[2])),
+                [3] = 100
+                }
+        
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+            
+                local args = {
+                    [1] = "Change_Value",
+                    [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[3]) .. "vsEnmu"):WaitForChild(tostring(plr[3])),
+                    [3] = 100
+                    }
+            
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+                    local args = {
+                        [1] = "Change_Value",
+                        [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[4]) .. "vsEnmu"):WaitForChild(tostring(plr[4])),
+                        [3] = 100
+                        }
+                
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+                        local args = {
+                            [1] = "Change_Value",
+                            [2] = workspace:WaitForChild("Debree"):WaitForChild("clash_folder"):WaitForChild(tostring(plr[5]) .. "vsEnmu"):WaitForChild(tostring(plr[5])),
+                            [3] = 100
+                            }
+                    
+                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+                            wait()
+    end
+
+})
 section4:AddButton({
     Name = "God Mode - Kamado Only", 
     Callback = function()
