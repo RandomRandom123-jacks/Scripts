@@ -157,49 +157,14 @@ section5:AddToggle({
 })
 
 section1:AddToggle({
-    Name = "BYPASS KA (read discord)",
-    Value = false,
-    Flag = "FJ",
-    Callback = function(state)
-        x = state
-        while x do
-            SkillBind("X")
-        end
-    end
-
-})
-section1:AddToggle({
-    Name = "Gka mist 2nd move needed", 
-    Value = false, 
-    Flag = "AF", 
-    Callback = function(state)
-        a = state 
-        while a do 
-            local target = getclosestmob() 
-            if target then
-                local args = {
-                    [1] = "eight_layed_mist_damage",
-                    [2] = workspace:WaitForChild(tostring(game.Players.LocalPlayer)),
-                    [3] = target.HumanoidRootPart.CFrame,
-                    [4] = true
-                }
-                
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-            end
-            task.wait()
-        end 
-    end 
-})
-
-section1:AddToggle({
-    Name = "Auto Mobs", 
+    Name = "Auto All Npc", 
     Value = false, 
     Flag = "NB", 
     Callback = function(state)
         l = state 
         while l do 
             local target = getclosestmob() 
-            if target and target:FindFirstChild("HumanoidRootPart")and (target.Name:match("Civilian") or target.Name:match("Demon")) then 
+            if target and target:FindFirstChild("HumanoidRootPart") then 
                 HumanoidRootPart.CFrame = CFrame.new(target.HumanoidRootPart.Position + target.HumanoidRootPart.CFrame.LookVector * 7, target.HumanoidRootPart.Position)
             end 
             task.wait()
@@ -233,22 +198,20 @@ section1:AddToggle({
     end
 })
 
-section1:AddToggle({
-    Name = "Auto Bosses", 
-    Value = false, 
-    Flag = "AFB", 
-    Callback = function(state)
-        k = state 
-        while k do 
-            local target = getclosestmob() 
-            if target and target:FindFirstChild("HumanoidRootPart")and (target.Name:match("Akaza") or target.Name:match("Flesh") or target.Name:match("Enmu")) then 
-                HumanoidRootPart.CFrame = CFrame.new(target.HumanoidRootPart.Position + target.HumanoidRootPart.CFrame.LookVector * -7.5, target.HumanoidRootPart.Position)
-            end 
-            task.wait()
-        end 
-    end 
-})
+section4:AddButton({
+    Name = "Anti Fail Mugen",
+    Callback = function()
+        local part = game:GetService("Players").LocalPlayer.PlayerScripts.Mugen_Train.BoardingCutscene
+        part:Destroy()
 
+        local part = game:GetService("ReplicatedStorage").Cutscenes_handler
+        part:Destroy()
+
+        local part = game:GetService("ReplicatedStorage").MugenTrain
+        part:Destroy()
+    end
+
+})
 section4:AddButton({
     Name = "God Mode - Kamado Only", 
     Callback = function()
@@ -256,7 +219,14 @@ section4:AddButton({
     end 
 })
 
+section4:AddButton({
+    Name = "Infinite yield use so u can pick up chest",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end
 
+
+})
 section4:AddButton({
     Name = "Rengoku Mode - Human Only", 
     Callback = function()
