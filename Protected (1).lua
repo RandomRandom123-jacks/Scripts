@@ -220,6 +220,22 @@ section4:AddButton({
 })
 
 section4:AddButton({
+    Name = "Shockwave God Mode 50+ mastery needed",
+    Callback = function()
+        while true do
+            local args = {
+                [1] = "skil_ting_asd",
+                [2] = game:GetService("Players").LocalPlayer,
+                [3] = "akaza_bda_compass_needle",
+                [4] = 1
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
+            task.wait()
+        end
+    end
+})
+section4:AddButton({
     Name = "Infinite yield use so u can pick up chest",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
