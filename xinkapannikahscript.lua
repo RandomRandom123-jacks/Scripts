@@ -69,7 +69,7 @@
                 }
                 
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Crab Cage").Deploy:FireServer(unpack(args))
-                wait()
+                wait(0.15)
               end
           end 
       })
