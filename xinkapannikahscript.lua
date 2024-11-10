@@ -23,6 +23,14 @@
             Name = "Crab"
         })
 
+        local section2 = main1:CreateSection({
+            Name = "Teleports"
+        })
+
+        local section3= main1:CreateSection({
+            Name = "Miscs"
+        })
+
 
         local savedtick = tick()
         local curtarget = nil 
@@ -65,6 +73,54 @@
               end
           end 
       })
+
+      section3:AddButton({
+        Name = "Buy Luck",
+        Flag = "niggerhitam",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-928.032837, 223.700027, -998.744995, -0.86823225, 0, 0.496157885, 0, 1, 0, -0.496157885, 0, -0.86823225)
+            workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Merlin"):WaitForChild("Merlin"):WaitForChild("luck"):InvokeServer()
+
+        end
+      })
+
+      section3:AddButton({
+        Name = "Buy Relics",
+        Flag = "asdasd",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-928.032837, 223.700027, -998.744995, -0.86823225, 0, 0.496157885, 0, 1, 0, -0.496157885, 0, -0.86823225)
+            workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Merlin"):WaitForChild("Merlin"):WaitForChild("power"):InvokeServer()
+
+        end
+      })
+
+      section3:AddButton({
+        Name = "Buy Sundial Totem",
+        Flag = "asd",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1149.45581, 134.532166, -1077.27539, -0.945118904, 0, -0.326726705, 0, 1, 0, 0.326726705, 0, -0.945118904)
+        end
+      })
+
+      section3:AddButton({
+        Name = "Buy Aurora Totem",
+        Flag = "baba",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1813.20496, -139.332184, -3280.39941, 0.671925902, -0.222812086, -0.70630753, 0.0369239748, 0.962564886, -0.268524557, 0.739697337, 0.154348925, 0.654999435)
+        end
+      })
+    
+    
+      for i,v in pairs(game:GetService("Workspace").world.spawns.TpSpots:GetDescendants()) do
+        section2:AddButton({
+            Name = v.Name,
+   
+            Callback = function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            end
+          })
+      end
+
 
         for i,v in pairs(getconnections(Player.Idled)) do 
             v:Disable()
