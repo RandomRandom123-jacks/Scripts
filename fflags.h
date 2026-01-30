@@ -2,8 +2,6 @@
 
     namespace fflags {
     inline uintptr_t FFlagList = 0x7a97eb8;
-    inline uintptr_t ValueGetSet = 0x30;
-    inline uintptr_t FlagToValue = 0xc0;
     inline uintptr_t HttpCacheCleanSpaceOnly = 0x67f2040;
     inline uintptr_t KeyRingKeyBeingUsedVersionInfoInfluxHundredths = 0x74cc47c;
     inline uintptr_t DebugSimPrimalUseSymmetrizedH = 0x67b6e78;
