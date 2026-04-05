@@ -1,4 +1,4 @@
- #include <cstdint>
+#include <cstdint>
 
 namespace fflags {
     inline uintptr_t FFlagList = 0x7FE0A48;
