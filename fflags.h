@@ -1,7 +1,6 @@
 #include <string>
 
 namespace fflags {
-	inline uintptr_t FFlagList = 0x875CB18;
 	inline uintptr_t ACEAnimationFromVideoCreatorServiceWithAssetImport = 0x8309B08;
 	inline uintptr_t ACSDeserializeSkipRobloxSerializable = 0x8030FC8;
 	inline uintptr_t ACSDeserializeWithUnpublished = 0x8030E48;
